@@ -14,10 +14,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -30,6 +27,15 @@ public class EmployeeController {
     @GetMapping("${end.point.id}")
     public ResponseEntity<IamResponse<EmployeeDTO>> getById(@PathVariable("id") Integer id){
         IamResponse<EmployeeDTO> response = employeeService.getById(id);
+
+        log.trace(ApiLogMessage.NAME_OF_CURRENT_METHOD.getValue(),ApiUtils.getMethodName());
+
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("${end.point.create}")
+    public ResponseEntity<IamResponse<EmployeeDTO>> create(@RequestBody EmployeeDTO employeeDTO){
+        IamResponse<EmployeeDTO> response = employeeService.createEmployeeObj(employeeDTO);
 
         log.trace(ApiLogMessage.NAME_OF_CURRENT_METHOD.getValue(),ApiUtils.getMethodName());
 

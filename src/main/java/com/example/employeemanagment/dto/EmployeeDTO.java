@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class EmployeeDTO implements Serializable {
     private Integer id;
     private String name;

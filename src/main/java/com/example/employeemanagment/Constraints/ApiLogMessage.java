@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum ApiLogMessage {
 
-    EMPLOYEE_MESSAGE_BY_ID("log{RECEIVING INFO ABOUT EMPLOYEE BY ID -> %s}"),
+    EMPLOYEE_MESSAGE_BY_ID("log{RECEIVING INFO ABOUT EMPLOYEE BY ID -> {}}"),
     NAME_OF_CURRENT_METHOD("log{CURRENT METHOD -> {}}");
     private final String value;
 

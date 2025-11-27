@@ -4,4 +4,7 @@ import com.example.employeemanagment.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
+
+    boolean existsByName(String name);
+
 }

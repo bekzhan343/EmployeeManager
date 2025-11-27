@@ -19,7 +19,7 @@ public class Employee {
     private Integer id;
 
     @NotNull(message = "Name cannot by empty!")
-    @Column(name = "name",nullable = false)
+    @Column(name = "name",nullable = false,unique = true)
     private String name;
 
     @NotNull(message = "Experience cannot be empty!")

@@ -36,7 +36,6 @@ public class EmployeeController {
     @PostMapping("${end.point.create}")
     public ResponseEntity<IamResponse<EmployeeDTO>> create(@RequestBody EmployeeDTO employeeDTO){
         IamResponse<EmployeeDTO> response = employeeService.createEmployeeObj(employeeDTO);
-
         log.trace(ApiLogMessage.NAME_OF_CURRENT_METHOD.getValue(),ApiUtils.getMethodName());
 
         return ResponseEntity.ok(response);
